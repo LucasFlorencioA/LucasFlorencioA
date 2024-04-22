@@ -1,0 +1,189 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #0899a3;
+}
+header{
+    background-color: #036f77;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 50px;
+}
+.navbar{
+    display: flex;
+    gap: 35px;
+}
+.logo{
+    border-radius: 50%;
+}
+
+.list{
+    list-style: none;
+    
+}
+.link{
+    text-decoration: none;
+    color: #fff;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 28px;
+    transition-duration: 0.5s;
+}
+.link:hover{
+    color: #e6c7c7;
+    font-size:27px ;
+}
+#btn-abrir-menu{
+    display: none;
+    background-color:#036f77;
+    border: none;
+    cursor: pointer;
+}
+#sair{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-color: #0899a3;
+    cursor: pointer;
+    border: none;
+}
+
+#mobile{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height:100vh;
+    background: #0899a3;
+    transform: translate(100%);
+    transition: all .4s ease;
+}
+
+#mobile.active{
+    transform: translate(0);
+}
+
+.nome{
+    display: flex;
+    color: #fff;
+    font-family:'Courier New', Courier, monospace;
+    padding: 1rem;
+    font-size: 20px;
+}
+
+.biografia{
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    font-size: 30px;
+    padding: 15px;
+    color: #fff;
+}
+
+section div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+section{
+    padding-top: 100px;
+    display: flex;
+}
+h2{
+    color: #fff;
+}
+
+.text{
+    color: #fff;
+    padding: 10px 30px ;
+}
+h4{
+    color: #fff;
+    font-size: 22px;
+}
+.lista{
+    color: #fff;
+}
+.f-m{
+    font-size: 18px;
+    padding: 25px 0px 5px 0px;
+}
+.img-p{
+    display: none;
+}
+footer{
+    background-color: #024b50;
+    padding: 100px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+h1{
+    color: #fff;
+    font-size: 35px;
+}
+
+@media screen and (max-width:768px){
+    .logo{
+        width: 90px;
+        height: 80px;
+    }
+    nav{
+        padding: 10px;
+    }
+    .navbar{
+        display: none;
+    }
+
+    #btn-abrir-menu{
+        display: block;
+    }
+    .biografia{
+        font-size: 15px;
+    }
+    h1{
+        font-size: 25px;
+    }
+    section{
+       flex-direction:column-reverse;
+    }
+    h2{
+        font-size: 18px;
+    }
+    .text{
+        font-size: 15px;
+    }
+    .lista{
+        padding: 0px 10px;
+        font-size: 10px;
+    }
+    .f-m{
+        font-size: 15px;
+        padding: 25px 0px 5px 0px;
+    }
+    .img-b{
+        height: 270px;
+        padding: 20px;
+    }
+    .img-p{
+        display: block;
+    }
+
+    footer{
+        padding: 50px;
+    }
+    
+}
