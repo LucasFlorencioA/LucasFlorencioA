@@ -4,10 +4,10 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #0899a3;
+    background-color: #000;
 }
 header{
-    background-color: #036f77;
+    background-color: #000;
 }
 
 nav{
@@ -41,7 +41,7 @@ nav{
 }
 #btn-abrir-menu{
     display: none;
-    background-color:#036f77;
+    background-color:#000;
     border: none;
     cursor: pointer;
 }
@@ -49,13 +49,13 @@ nav{
     position: absolute;
     top: 30px;
     left: 30px;
-    background-color: #0899a3;
+    background-color: #fff;
     cursor: pointer;
     border: none;
 }
 
 #mobile{
-    position: fixed;
+    position:fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,8 +64,8 @@ nav{
     top: 0;
     right: 0;
     width: 50vw;
+    background:#000000;
     height:100vh;
-    background: #0899a3;
     transform: translate(100%);
     transition: all .4s ease;
 }
@@ -89,6 +89,32 @@ nav{
     font-size: 30px;
     padding: 15px;
     color: #fff;
+}
+.hidden{
+    opacity: 0;
+    transform:scaleX(0);
+    transition: all 2s;
+}
+
+main :nth-child(2){
+    transition-delay: 400ms;
+}
+
+main :nth-child(3){
+    transition-delay: 600ms;
+}
+main :nth-child(4){
+    transition-delay: 800ms;
+}
+main :nth-child(5){
+    transition-delay: 800ms;
+}
+
+
+.show{
+    opacity: 1;
+    transform:scaleX(1);
+    transition: all 2s;
 }
 
 section div{
