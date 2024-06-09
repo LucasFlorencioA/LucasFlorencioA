@@ -23,3 +23,5 @@ const transform = new IntersectionObserver((arguments) => {
 
 const anime = document.querySelectorAll(".hidden")
 anime.forEach((t) => transform.observe(t))
+
+

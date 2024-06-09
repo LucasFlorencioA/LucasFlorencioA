@@ -7,6 +7,7 @@ body{
     background-color: #000;
 }
 header{
+    padding-bottom: 150px;
     background-color: #000;
 }
 
@@ -47,8 +48,8 @@ nav{
 }
 #sair{
     position: absolute;
-    top: 30px;
-    left: 30px;
+    top: 0px;
+    left: 0px;
     background-color: #fff;
     cursor: pointer;
     border: none;
@@ -58,20 +59,18 @@ nav{
     position:fixed;
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 50px;
+    gap: 10px;
     top: 0;
     right: 0;
-    width: 50vw;
+    width: 100%;
     background:#000000;
-    height:100vh;
-    transform: translate(100%);
+    height:50%;
+    transform: translateY(-100%);
     transition: all .4s ease;
 }
 
 #mobile.active{
-    transform: translate(0);
+    transform: translateY(0);
 }
 
 .nome{
@@ -87,12 +86,13 @@ nav{
     justify-content: center;
     font-style: italic;
     font-size: 30px;
-    padding: 15px;
+    padding: 30px;
     color: #fff;
 }
 .hidden{
+    filter: blur(20px);
     opacity: 0;
-    transform:scaleX(0);
+    transform:translateZ(100px);
     transition: all 2s;
 }
 
@@ -112,8 +112,10 @@ main :nth-child(5){
 
 
 .show{
+    filter: blur(0);
     opacity: 1;
-    transform:scaleX(1);
+    transform:translateZ(0);
+    transform: rotateX(0);
     transition: all 2s;
 }
 
