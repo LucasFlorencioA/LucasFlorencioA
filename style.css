@@ -1,52 +1,62 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
+
+    background: linear-gradient(#604f9718, #4e2b2b23);
     background-color: #000;
 }
-header{
+
+header {
     padding-bottom: 150px;
     background-color: #000;
 }
 
-nav{
+nav {
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     padding: 50px;
 }
-.navbar{
+
+.navbar {
     display: flex;
     gap: 35px;
 }
-.logo{
+
+.logo {
     border-radius: 50%;
 }
 
-.list{
+.list {
     list-style: none;
-    
+
 }
-.link{
+
+.link {
     text-decoration: none;
     color: #fff;
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 28px;
     transition-duration: 0.5s;
 }
-.link:hover{
+
+.link:hover {
     color: #e6c7c7;
-    font-size:27px ;
+    font-size: 27px;
 }
-#btn-abrir-menu{
+
+#btn-abrir-menu {
     display: none;
-    background-color:#000;
+    background-color: #000;
     border: none;
     cursor: pointer;
 }
-#sair{
+
+#sair {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -55,33 +65,33 @@ nav{
     border: none;
 }
 
-#mobile{
-    position:fixed;
+#mobile {
+    position: fixed;
     display: flex;
     align-items: center;
     gap: 10px;
     top: 0;
     right: 0;
     width: 100%;
-    background:#000000;
-    height:50%;
+    background: #000000;
+    height: 50%;
     transform: translateY(-100%);
     transition: all .4s ease;
 }
 
-#mobile.active{
+#mobile.active {
     transform: translateY(0);
 }
 
-.nome{
+.nome {
     display: flex;
     color: #fff;
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     padding: 1rem;
     font-size: 20px;
 }
 
-.biografia{
+.biografia {
     display: flex;
     justify-content: center;
     font-style: italic;
@@ -89,69 +99,79 @@ nav{
     padding: 30px;
     color: #fff;
 }
-.hidden{
+
+.hidden {
     filter: blur(20px);
     opacity: 0;
-    transform:translateZ(100px);
+    transform: translateZ(100px);
     transition: all 2s;
 }
 
-main :nth-child(2){
+main :nth-child(2) {
     transition-delay: 400ms;
 }
 
-main :nth-child(3){
+main :nth-child(3) {
     transition-delay: 600ms;
 }
-main :nth-child(4){
+
+main :nth-child(4) {
     transition-delay: 800ms;
 }
-main :nth-child(5){
+
+main :nth-child(5) {
     transition-delay: 800ms;
 }
 
 
-.show{
+.show {
     filter: blur(0);
     opacity: 1;
-    transform:translateZ(0);
+    transform: translateZ(0);
     transform: rotateX(0);
     transition: all 2s;
 }
 
-section div{
+section div {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 25px;
 }
-section{
+
+section {
     padding-top: 100px;
     display: flex;
 }
-h2{
+
+h2 {
     color: #fff;
 }
 
-.text{
+.text {
     color: #fff;
-    padding: 10px 30px ;
+    padding: 10px 30px;
 }
-h4{
+
+h4 {
     color: #fff;
     font-size: 22px;
 }
-.lista{
+
+.lista {
     color: #fff;
 }
-.f-m{
+
+.f-m {
     font-size: 18px;
     padding: 25px 0px 5px 0px;
 }
-.img-p{
+
+.img-p {
     display: none;
 }
-footer{
+
+footer {
     background-color: #024b50;
     padding: 100px;
     display: flex;
@@ -159,59 +179,70 @@ footer{
     gap: 30px;
 }
 
-h1{
+h1 {
     color: #fff;
     font-size: 35px;
 }
 
-@media screen and (max-width:768px){
-    .logo{
+@media screen and (max-width:768px) {
+    .logo {
         width: 90px;
         height: 80px;
     }
-    nav{
+
+    nav {
         padding: 10px;
     }
-    .navbar{
+
+    .navbar {
         display: none;
     }
 
-    #btn-abrir-menu{
-        display: block;
-    }
-    .biografia{
-        font-size: 15px;
-    }
-    h1{
-        font-size: 25px;
-    }
-    section{
-       flex-direction:column-reverse;
-    }
-    h2{
-        font-size: 18px;
-    }
-    .text{
-        font-size: 15px;
-    }
-    .lista{
-        padding: 0px 10px;
-        font-size: 10px;
-    }
-    .f-m{
-        font-size: 15px;
-        padding: 25px 0px 5px 0px;
-    }
-    .img-b{
-        height: 270px;
-        padding: 20px;
-    }
-    .img-p{
+    #btn-abrir-menu {
         display: block;
     }
 
-    footer{
+    .biografia {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    section {
+        flex-direction: column-reverse;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .text {
+        font-size: 15px;
+    }
+
+    .lista {
+        padding: 0px 10px;
+        font-size: 10px;
+    }
+
+    .f-m {
+        font-size: 15px;
+        padding: 25px 0px 5px 0px;
+    }
+
+    .img-b {
+        height: 270px;
+        padding: 20px;
+    }
+
+    .img-p {
+        display: block;
+    }
+
+    footer {
         padding: 50px;
     }
-    
+
 }
