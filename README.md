@@ -6,7 +6,7 @@
 
 
 
-![Lucas GitHub stats](https://github-readme-stats.vercel.app/api?username=LucasFlorencioA&hide=contribs,prs)
+![Lucas GitHub stats](https://github-readme-stats.vercel.app/api?username=LucasFlorencioA&hide=contribs,prs)<br/>
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=LucasFlorencioA&layout=donut)](https://github.com/LucasFlorencioA/github-readme-stats)
 
 ## Tecnologias que uso no meu dia
