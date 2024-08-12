@@ -81,7 +81,7 @@ print(carros_1.union(carros_2))
 def intersection(a,b):
     print(a.intersection(b))
 
-intersection(carros_1, carros_2)'''
+intersection(carros_1, carros_2)
 
 
 def cadastrar_alunos():
@@ -151,5 +151,4 @@ def main():
     visualizar_alunos(alunos)
 
 if __name__ == "__main__":
-    main()
-
+    main()'''
