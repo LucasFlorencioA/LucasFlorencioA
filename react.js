@@ -11,3 +11,5 @@ const precos = [
 const precosFiltro = precos.filter((preco) => preco.includes("R$"))
 console.log(precosFiltro)
 
+
+

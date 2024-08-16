@@ -1,13 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apredendo-react</title>
-</head>
-<body>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React para Iniciantes</title>
 
-    <script type="module" src="./react.js"></script>
-    
-</body>
+    <!-- Carrega o React, React Dom e Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root">App</div>
+    <!-- Precisa indicar para o Babel que ele deve transpilar o código -->
+    <script type="text/babel">
+      // Cria um componente chamado App
+      // O componente retorna JSX e por isso
+      // o Babel irá transformar o mesmo
+
+      function button() {
+        const [total, setTotal] = React.useState(0)
+        return <button onClick={()=> setTotal(total+1)}>Adicionar {total}</button>
+      }
+      function App() {
+        return <div>
+            <h1>Aplicativo React</h1>
+            <button />
+            <button />
+            </div>;
+        
+      }
+
+      // Renderiza o componente App no elemento que tiver id = app
+      ReactDOM.render(<App />, document.querySelector('#root'));
+    </script>
+  </body>
 </html>
