@@ -1,6 +1,7 @@
 import flet as ft
 from models.gerenciador import GerenciadorDeReservas
 from models.cliente import Cliente
+from models.quarto import Quarto 
 
 def tela_cliente(page: ft.Page, gerenciador: GerenciadorDeReservas):
     page.title = "Sistema de Reservas de Hotel - Cliente"
