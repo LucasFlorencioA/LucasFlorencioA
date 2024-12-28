@@ -1,12 +1,23 @@
 # Documentação do Sistema de Gestão das Indústrias Wayne
 
-Bem-vindo à documentação do sistema de gestão desenvolvido para as Indústrias Wayne. Este guia detalha como instalar, configurar e usar o sistema, bem como as permissões atribuídas aos diferentes tipos de usuários.
+Bem-vindo à documentação do sistema de gestão desenvolvido para as Indústrias Wayne. Este guia detalha o processo de instalação, configuração e uso do sistema, além das permissões atribuídas aos diferentes tipos de usuários.
 
 ---
 
-## **1. Instalação**
+## **1. Visão Geral do Sistema**
 
-### **1.1. Requisitos**
+O sistema de gestão das Indústrias Wayne foi projetado para facilitar o gerenciamento de recursos e usuários. Principais funcionalidades:
+
+- Gerenciamento de recursos, como máquinas, equipamentos e ferramentas.
+- Controle de permissões baseado em funções de usuários (Administrador, Gerente e Funcionário).
+- Visualização de dados interativos por meio de dashboards.
+- Sistema seguro de login.
+
+---
+
+## **2. Instalação**
+
+### **2.1. Requisitos**
 
 Certifique-se de que o ambiente atenda aos seguintes requisitos:
 - Python 3.9 ou superior.
@@ -14,7 +25,7 @@ Certifique-se de que o ambiente atenda aos seguintes requisitos:
 - SQLite3 (integrado ao Python).
 - Dependências especificadas no arquivo `requirements.txt`.
 
-### **1.2. Etapas de Instalação**
+### **2.2. Etapas de Instalação**
 
 1. Clone este repositório para sua máquina local:
    ```bash
@@ -40,7 +51,7 @@ Certifique-se de que o ambiente atenda aos seguintes requisitos:
 
 ---
 
-## **2. Configuração do Banco de Dados**
+## **3. Configuração do Banco de Dados**
 
 O sistema utiliza SQLite como banco de dados. Siga os passos abaixo para configurar:
 
@@ -53,7 +64,7 @@ O sistema utiliza SQLite como banco de dados. Siga os passos abaixo para configu
    - **resources:** Armazena os recursos cadastrados (ID, nome, categoria e status).
 
 3. **Adicionar usuários iniciais:**
-   Execute o seguinte comando no Python para adicionar um usuário administrador:
+   Para adicionar um usuário administrador, execute o seguinte código no Python:
    ```python
    import sqlite3
 
@@ -67,51 +78,69 @@ O sistema utiliza SQLite como banco de dados. Siga os passos abaixo para configu
 
 ---
 
-## **3. Uso Básico**
+## **4. Uso do Sistema**
 
-### **3.1. Login**
+### **4.1. Login**
 
 1. Ao abrir o sistema, será exibida uma tela de login.
 2. Insira o nome de usuário e a senha para acessar as funcionalidades.
 
-### **3.2. Painel de Administração**
+### **4.2. Painel de Administração**
 
 Usuários com função de **Administrador** ou **Gerente** podem:
+
 - Adicionar recursos com nome, categoria e status.
 - Atualizar o status de recursos existentes.
 - Remover recursos.
+- Visualizar todas as informações sobre os recursos.
 
-### **3.3. Dashboard de Visualização**
+### **4.3. Painel do Funcionário**
 
-Disponível para todos os usuários. Exibe:
-- Métricas sobre os recursos cadastrados.
-- Gráficos interativos para análise de categorias e status.
-- Recursos recentemente adicionados.
+Disponível para usuários com função de **Funcionário**, permite:
 
-### **3.4. Logout**
+- Visualizar recursos cadastrados, incluindo categoria e status.
+- Consultar recursos disponíveis para uso.
+
+### **4.4. Dashboard Interativo**
+
+- Exibe gráficos e métricas relacionadas aos recursos.
+- Permite uma análise rápida e eficaz do status e da distribuição dos recursos.
+
+### **4.5. Logout**
 
 Para sair do sistema, selecione a opção **Sair** no menu lateral.
 
 ---
 
-## **4. Permissões**
+## **5. Permissões de Usuários**
 
 | Função           | Permissão                                                         |
 |-------------------|-----------------------------------------------------------------|
 | **Administrador** | Gerenciar recursos, visualizar dashboard e acessar todas as áreas. |
 | **Gerente**       | Gerenciar recursos e visualizar dashboard.                     |
-| **Usuário**       | Apenas visualizar o dashboard.                                 |
+| **Funcionário**   | Apenas visualizar o dashboard e consultar recursos.            |
 
 ---
 
-## **5. Personalização**
+## **6. Personalização e Extensão**
 
-Caso deseje personalizar o sistema:
-- **Configurar novos gráficos:** Ajuste o código no arquivo `app.py`.
-- **Adicionar funcionalidades:** Utilize as classes existentes como base.
-- **Temas:** Consulte a documentação do Streamlit para criar temas personalizados.
+Para personalizar o sistema:
+
+1. **Configurar novos gráficos:**
+   Ajuste o código no arquivo `app.py` para incluir novos gráficos interativos.
+
+2. **Adicionar funcionalidades:**
+   Utilize as classes existentes como base para implementar novos módulos.
+
+3. **Temas:**
+   Consulte a documentação do Streamlit para criar temas personalizados.
+
+4. **Integrações:**
+   Adicione integrações com APIs externas ou sistemas corporativos, se necessário.
 
 ---
 
-Caso tenha dúvidas ou precise de suporte, entre em contato com o desenvolvedor.
+## **7. Suporte**
+
+Caso tenha dúvidas ou precise de suporte, entre em contato com o desenvolvedor ou abra uma issue no repositório oficial do projeto.
 

@@ -1,8 +1,7 @@
-import pandas as pd
-import plotly.express as px
 import sqlite3
 import streamlit as st
-
+import pandas as pd
+import plotly.express as px
 
 def login():
     st.title("Bem-vindo ao Sistema de Gestão das Indústrias Wayne.") 
@@ -11,7 +10,7 @@ def login():
     password = st.text_input("Senha", type="password")
 
     if st.button("Conecte-se"):
-        user = authenticate(username, password)
+        user = autenticacao(username, password)
         if user:
             st.success(f"Bem vindo {username}, Função: {user[0]}")
             st.session_state.logged_in = True
@@ -45,10 +44,10 @@ def main():
             st.session_state.logged_in = False
             st.session_state.user_role = None
             st.session_state.updated = False
-            st.success("Você saiu com sucesso! Redirecionando para a tela de login...")
+            st.success("Você selecionou sair! Redirecionando para a tela de login...")
             
 
-def authenticate(nome, senha):
+def autenticacao(nome, senha):
     conn = sqlite3.connect("industrias_wayne.db")
     cursor = conn.cursor()
     cursor.execute("SELECT role FROM usuarios WHERE nome = ? AND senha = ?", (nome, senha))
@@ -143,7 +142,7 @@ def admin_painel():
         if submit:
             resource_manager.add_recursos(name, category, status)
             st.success("Recurso adicionado com sucesso!")
-            st.session_state.updated = True  # Define que algo foi atualizado
+            st.session_state.updated = True 
 
     # Lista de recursos
     if "updated" not in st.session_state:
@@ -151,10 +150,10 @@ def admin_painel():
 
     resources = resource_manager.list_recursos()
     if st.session_state.updated:
-        resources = resource_manager.list_recursos()  # Recarrega os dados
-        st.session_state.updated = False  # Reseta o estado
+        resources = resource_manager.list_recursos()  
+        st.session_state.updated = False  
 
-    # Inicializar `df` como vazio
+
     df = pd.DataFrame(columns=["ID", "Nome", "Categoria", "Status"])
     if resources:
         df = pd.DataFrame(resources, columns=["ID", "Nome", "Categoria", "Status"])
@@ -162,7 +161,7 @@ def admin_painel():
     else:
         st.info("Nenhum recurso cadastrado.")
 
-    # Atualizar status de um recurso
+
     st.subheader("Atualizar Status do Recurso")
     recurso_id = st.number_input("ID do Recurso", min_value=1, step=1, key="update_recurso_id")
     novo_status = st.selectbox("Novo Status", ["Disponível", "Em Uso", "Manutenção"], key="update_novo_status")
@@ -174,10 +173,10 @@ def admin_painel():
         else:
             st.error("ID não encontrado na lista de recursos.")
 
-    # Remover recurso
+
     st.subheader("Remover Recurso")
     recurso_id_remover = st.number_input("ID do Recurso a Remover", min_value=1, step=1, key="remove_recurso_id")
-    if st.button("Remover", key="remove_button"):
+    if st.button("Remove", key="remove_button"):
         if not df.empty and recurso_id_remover in df["ID"].values:
             resource_manager.remove_recurso(recurso_id_remover)
             st.success(f"Recurso com ID {recurso_id_remover} removido com sucesso!")

@@ -27,7 +27,7 @@ def inicializar_banco():
     # Inserção de um administrador padrão
     cursor.execute("""
     INSERT OR IGNORE INTO usuarios (nome, senha, role) 
-    VALUES ('admin', '1234', 'Administrador')
+    VALUES ('admin', 'Bmtn8795@', 'Administrador')
     """)
 
     conn.commit()
