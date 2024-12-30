@@ -99,9 +99,10 @@ def carregar_painel():
         df = pd.DataFrame(resources, columns=["ID", "Nome", "Categoria", "Status"])
 
      
-        st.metric("Total de Recursos", len(df))
-        st.metric("Categorias Únicas", df["Categoria"].nunique())
-        st.metric("Status Únicos", df["Status"].nunique())
+        st.metric("Total de Recursos", len(df), delta="📈 Crescimento Mensal: +5%")
+        st.metric("Categorias Únicas", df["Categoria"].nunique(), delta="📊 Melhor uso: Equipamentos")
+        st.metric("Status Únicos", df["Status"].nunique(), delta="✔️ Em Uso: 60%")
+
 
 
         category_chart = px.bar(
@@ -147,17 +148,13 @@ def admin_painel():
         st.session_state.updated = False
 
     resources = resource_manager.list_recursos()
-    if st.session_state.updated:
-        resources = resource_manager.list_recursos()  
-        st.session_state.updated = False  
 
-
-    df = pd.DataFrame(columns=["ID", "Nome", "Categoria", "Status"])
     if resources:
         df = pd.DataFrame(resources, columns=["ID", "Nome", "Categoria", "Status"])
-        st.dataframe(df)
     else:
-        st.info("Nenhum recurso cadastrado.")
+        df = pd.DataFrame(columns=["ID", "Nome", "Categoria", "Status"])
+
+    st.dataframe(df)
 
 
     st.subheader("Atualizar Status do Recurso")
@@ -181,6 +178,15 @@ def admin_painel():
             st.session_state.updated = True  
         else:
             st.error("ID não encontrado na lista de recursos.")
+    resources = resource_manager.list_recursos()
+    if resources:
+        df = pd.DataFrame(resources, columns=["ID", "Nome", "Categoria", "Status"])
+        st.dataframe(df.style.highlight_max(axis=0, subset=["Categoria"]), use_container_width=True)
+    with st.expander("Filtrar Dados"):
+        categoria_selecionada = st.multiselect("Filtrar por Categoria", df["Categoria"].unique())
+        if categoria_selecionada:
+            df_filtrado = df[df["Categoria"].isin(categoria_selecionada)]
+            st.dataframe(df_filtrado)
 
 
 if __name__ == "__main__":
