@@ -121,9 +121,12 @@ def carregar_painel():
         )
         st.plotly_chart(status_chart)
 
+    resources = resource_manager.list_recursos()
+    if resources:
+        df = pd.DataFrame(resources, columns=["ID", "Nome", "Categoria", "Status"])
+        st.dataframe(df.style.highlight_max(axis=0, subset=["Categoria"]), use_container_width=True)
 
-        st.subheader("Recursos Recentemente Adicionados")
-        st.dataframe(df.tail(5))
+        
 
     else:
         st.warning("Nenhum recurso disponível para exibição no momento.")
