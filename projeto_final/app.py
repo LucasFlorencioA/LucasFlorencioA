@@ -9,7 +9,7 @@ def login():
     username = st.text_input("Nome de usuário")
     password = st.text_input("Senha", type="password")
 
-    if st.button("Conecte-se"):
+    if st.button("Conecte-se" ):
         user = autenticacao(username, password)
         if user:
             st.success(f"Bem vindo {username}, Função: {user[0]}")
@@ -132,7 +132,6 @@ def admin_painel():
     st.header("Painel do Administrador")
     resource_manager = Gerenciador_de_recursos()
 
-    # Adicionar recurso
     st.subheader("Gerenciar Recursos")
     with st.form("Adicionar Recurso"):
         name = st.text_input("Nome do Recurso")
@@ -144,7 +143,6 @@ def admin_painel():
             st.success("Recurso adicionado com sucesso!")
             st.session_state.updated = True 
 
-    # Lista de recursos
     if "updated" not in st.session_state:
         st.session_state.updated = False
 
@@ -169,7 +167,7 @@ def admin_painel():
         if not df.empty and recurso_id in df["ID"].values:
             resource_manager.update_status(recurso_id, novo_status)
             st.success(f"Status do recurso com ID {recurso_id} atualizado para '{novo_status}'!")
-            st.session_state.updated = True  # Marca que houve atualização
+            st.session_state.updated = True 
         else:
             st.error("ID não encontrado na lista de recursos.")
 
@@ -180,7 +178,7 @@ def admin_painel():
         if not df.empty and recurso_id_remover in df["ID"].values:
             resource_manager.remove_recurso(recurso_id_remover)
             st.success(f"Recurso com ID {recurso_id_remover} removido com sucesso!")
-            st.session_state.updated = True  # Marca que houve atualização
+            st.session_state.updated = True  
         else:
             st.error("ID não encontrado na lista de recursos.")
 

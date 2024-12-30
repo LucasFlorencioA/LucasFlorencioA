@@ -4,7 +4,6 @@ def inicializar_banco():
     
     conn = sqlite3.connect("industrias_wayne.db")
     cursor = conn.cursor()
-    # Criação da tabela de usuários
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS usuarios (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -14,7 +13,6 @@ def inicializar_banco():
     )
     """)
 
-    # Criação da tabela de recursos
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS resources (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -24,7 +22,6 @@ def inicializar_banco():
     )
     """)
 
-    # Inserção de um administrador padrão
     cursor.execute("""
     INSERT OR IGNORE INTO usuarios (nome, senha, role) 
     VALUES ('admin', 'Bmtn8795@', 'Administrador')

@@ -56,7 +56,7 @@ Certifique-se de que o ambiente atenda aos seguintes requisitos:
 O sistema utiliza SQLite como banco de dados. Siga os passos abaixo para configurar:
 
 1. **Inicialização do banco de dados:**
-   O arquivo `industrias_wayne.db` será gerado automaticamente ao executar o sistema pela primeira vez.
+   O banco de dados `industrias_wayne.db` já foi previamente criado, portanto, não é necessário executá-lo pela primeira vez para gerar o arquivo.
 
 2. **Estrutura do banco de dados:**
    O banco contém as seguintes tabelas principais:
@@ -108,7 +108,7 @@ Disponível para usuários com função de **Funcionário**, permite:
 
 ### **4.5. Logout**
 
-Para sair do sistema, selecione a opção **Sair** no menu lateral.
+Para sair do sistema, selecione a opção **Sair** no menu lateral. Caso o logout automático não ocorra, clique na opção **Conecte-se** ou atualize a página para retornar à tela inicial.
 
 ---
 
