@@ -2,6 +2,8 @@ import sqlite3
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from database import inicializar_banco
+inicializar_banco()
 
 def login():
     st.title("Bem-vindo ao Sistema de Gestão das Indústrias Wayne.") 
@@ -44,7 +46,7 @@ def main():
             st.session_state.logged_in = False
             st.session_state.user_role = None
             st.session_state.updated = False
-            st.success("Você selecionou sair! Redirecionando para a tela de login...")
+            st.success("Você foi desconectado. Recarregue a página para voltar ao login.")
             
 
 def autenticacao(nome, senha):
@@ -154,8 +156,9 @@ def admin_painel():
 
     if resources:
         df = pd.DataFrame(resources, columns=["ID", "Nome", "Categoria", "Status"])
+        st.dataframe(df, use_container_width=True)
     else:
-        df = pd.DataFrame(columns=["ID", "Nome", "Categoria", "Status"])
+        st.info("Nenhum recurso cadastrado.")
 
     st.dataframe(df)
 
@@ -194,3 +197,5 @@ def admin_painel():
 
 if __name__ == "__main__":
     main()
+    
+    
